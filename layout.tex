@@ -1,0 +1,65 @@
+%-- Page Layout
+%\usepackage[nohead]{geometry} %inner=, outer=, top=, bottom= 
+%\setlength{\paperwidth}{164mm}
+%\setlength{\paperheight}{234mm}
+%\setlength{\textwidth}{125mm}
+%\setlength{\textheight}{185mm}
+%\KOMAoptions{
+%    fontsize=10pt,
+%    paper=164mm:234mm,
+%	DIV=calc,
+%}
+%\setlength{\parindent}{0em}
+\pagestyle{plain} % No header only footer
+\interfootnotelinepenalty=10000 % do not split footnote across pages
+\raggedbottom % allow whitespace at bottom of pages instead of streching parskip
+
+%\addtolength{\voffset}{-5mm}
+%\addtolength{\hoffset}{-5mm}
+
+
+%-- Language and encoding
+\usepackage[ngerman]{babel} % Required for "Neue Deutsche Rechtschreibung"
+\usepackage[utf8]{inputenc} % Required for german umlauts
+\usepackage[german=swiss]{csquotes} %Swiss quotation style << >>
+\usepackage[T1]{fontenc} % Improves rendering of umlauts, quotes usw. in pdf
+
+
+%-- Images and Caption
+\usepackage{graphicx} % Required for including pictures
+\usepackage{float} % Required for displaying images exactly where they appear in the source code
+\usepackage[hypcap]{caption} % Required for image caption
+\usepackage{wrapfig} % Allows in-line images
+\graphicspath{{images/}} % Path to image folder
+\usepackage{chngcntr} % FRequired for \counterwithout
+\counterwithout{figure}{chapter} %figures without chapter number
+\renewcommand{\figurename}{Abb.}
+
+%-- Citation, Bibliography
+\usepackage[style=authoryear, backend=biber, bibwarn=true]{biblatex} % Bibliography style
+\addbibresource{OpenSourceAndArt.bib} % Bibliography File
+\setlength\bibitemsep{2mm} % Increased space between bibliography entries
+\addto{\captionsngerman}{%
+\renewcommand{\figurename}{Abb.} % Changes "Abbildung" in captions to "Abb."
+}
+\DefineBibliographyStrings{ngerman}{%
+  bibliography = {Literaturverzeichnis} % Changes "Literatur" to "Literaturverzeichnis"
+}
+%-- Todo Markup
+\usepackage{color, soul} % Required for highliting todo items
+\newcommand{\comment}[1]{} % Allows multi line comments (http://tex.stackexchange.com/questions/44282/multiline-comment)
+\newcommand{\todo}[1]{[\hl{TODO:} #1]} % For todo items
+
+
+%-- Typography
+\usepackage{lmodern} % Font Roboto Light
+\usepackage[T1]{fontenc} % Improves rendering of umlauts, quotes usw. in pdf
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[protrusion=true,expansion=true]{microtype} % Better typography
+\usepackage{hyperref} % Required for clickable hyperlinks
+\linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
+\renewcommand\UrlFont{\itshape} %Italic Hyperlinks 
+
+%\makeatletter
+%\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
+%\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
