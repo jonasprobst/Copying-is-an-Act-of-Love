@@ -1,21 +1,8 @@
 %-- Page Layout
-%\usepackage[nohead]{geometry} %inner=, outer=, top=, bottom= 
-%\setlength{\paperwidth}{164mm}
-%\setlength{\paperheight}{234mm}
-%\setlength{\textwidth}{125mm}
-%\setlength{\textheight}{185mm}
-%\KOMAoptions{
-%    fontsize=10pt,
-%    paper=164mm:234mm,
-%	DIV=calc,
-%}
-%\setlength{\parindent}{0em}
 \pagestyle{plain} % No header only footer
 \interfootnotelinepenalty=10000 % do not split footnote across pages
 \raggedbottom % allow whitespace at bottom of pages instead of streching parskip
-
-%\addtolength{\voffset}{-5mm}
-%\addtolength{\hoffset}{-5mm}
+\usepackage[a4, center, cam]{crop} % display crop marks
 
 
 %-- Language and encoding
@@ -32,8 +19,9 @@
 \usepackage{wrapfig} % Allows in-line images
 \graphicspath{{images/}} % Path to image folder
 \usepackage{chngcntr} % FRequired for \counterwithout
-\counterwithout{figure}{chapter} %figures without chapter number
-\renewcommand{\figurename}{Abb.}
+\counterwithout{figure}{chapter} % figures without chapter number
+\renewcommand{\figurename}{Abb.} % change caption identifier
+
 
 %-- Citation, Bibliography
 \usepackage[style=authoryear, backend=biber, bibwarn=true]{biblatex} % Bibliography style
@@ -45,6 +33,8 @@
 \DefineBibliographyStrings{ngerman}{%
   bibliography = {Literaturverzeichnis} % Changes "Literatur" to "Literaturverzeichnis"
 }
+
+
 %-- Todo Markup
 \usepackage{color, soul} % Required for highliting todo items
 \newcommand{\comment}[1]{} % Allows multi line comments (http://tex.stackexchange.com/questions/44282/multiline-comment)
@@ -58,8 +48,7 @@
 \usepackage[protrusion=true,expansion=true]{microtype} % Better typography
 \usepackage{hyperref} % Required for clickable hyperlinks
 \linespread{1.05} % Change line spacing here, Palatino benefits from a slight increase by default
-\renewcommand\UrlFont{\itshape} %Italic Hyperlinks 
+\renewcommand\UrlFont{\itshape} %Italic Hyperlinks
 
-%\makeatletter
-%\renewcommand{\@listI}{\itemsep=0pt} % Reduce the space between items in the itemize and enumerate environments and the bibliography
-%\renewcommand\@biblabel[1]{\textbf{#1.}} % Change the square brackets for each bibliography item from '[1]' to '1.'
+
+
